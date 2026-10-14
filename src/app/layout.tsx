@@ -1,46 +1,76 @@
-import { Analytics } from "@vercel/analytics/next"
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 
-const inter = Inter({ subsets: ['latin', 'latin-ext'] });
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://karolziolkowski.pl'),
+  metadataBase: new URL('https://karol-ziolkowski.vercel.app/'), // <-- Wklej tu swój adres z Vercela
   title: {
-    default: 'Karol Ziółkowski — Web Development & Design',
+    default: 'Karol Ziółkowski | Web Developer & Next.js Freelancer',
     template: '%s | Karol Ziółkowski',
   },
   description:
-    'Projektuję i wdrażam ultraszybkie, dedykowane strony internetowe dla firm w Next.js. Szyty na miarę design, czysty kod i wysoka konwersja.',
+    'Tworzę nowoczesne, szybkie i dopracowane strony internetowe oraz aplikacje w Next.js dla firm i klientów indywidualnych. Zobacz portfolio Karola Ziółkowskiego i zleć swój projekt.',
   keywords: [
     'Karol Ziółkowski',
     'web developer',
+    'programista Next.js',
+    'freelancer Next.js',
     'tworzenie stron internetowych',
-    'strony Next.js',
-    'tworzenie stron www',
-    'freelancer web development',
+    'aplikacje webowe',
+    'React',
+    'Tailwind CSS',
+    'portfolio programisty',
   ],
   authors: [{ name: 'Karol Ziółkowski' }],
   creator: 'Karol Ziółkowski',
+  publisher: 'Karol Ziółkowski',
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     type: 'website',
     locale: 'pl_PL',
-    url: 'https://karolziolkowski.pl',
-    title: 'Karol Ziółkowski — Web Development & Design',
+    url: '/',
+    siteName: 'Karol Ziółkowski | Portfolio',
+    title: 'Karol Ziółkowski | Web Developer & Next.js Freelancer',
     description:
-      'Ultraszybkie strony internetowe dla firm w Next.js. Szyty na miarę design, czysty kod i brak szablonów.',
-    siteName: 'Karol Ziółkowski',
+      'Nowoczesne, szybkie i dopracowane strony internetowe oraz aplikacje w Next.js dla firm i klientów indywidualnych.',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Karol Ziółkowski – Web Developer & Next.js Freelancer',
+        type: 'image/png',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Karol Ziółkowski — Web Development & Design',
+    title: 'Karol Ziółkowski | Web Developer & Next.js Freelancer',
     description:
-      'Ultraszybkie strony internetowe w Next.js. Dedykowany design i czysty kod.',
+      'Nowoczesne, szybkie i dopracowane strony internetowe oraz aplikacje w Next.js dla firm i klientów indywidualnych.',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Karol Ziółkowski – Web Developer & Next.js Freelancer',
+      },
+    ],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+      'max-video-preview': -1,
+    },
   },
 };
 
@@ -50,11 +80,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="pl" className="scroll-smooth">
-      <body className={`${inter.className} bg-neutral-950 text-white antialiased`}>
-        {children}
-        <Analytics/>
-      </body>
+    <html lang="pl">
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }
