@@ -9,14 +9,6 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://karol-ziolkowski.vercel.app'),
   title: "Karol Ziółkowski | Web Developer & Next.js Freelancer",
   description: "Nowoczesne, szybkie strony i aplikacje internetowe tworzone w Next.js i Tailwind CSS.",
-  openGraph: {
-    title: "Karol Ziółkowski | Web Developer & Next.js Freelancer",
-    description: "Nowoczesne, szybkie strony i aplikacje internetowe tworzone w Next.js i Tailwind CSS.",
-    url: 'https://karol-ziolkowski.vercel.app',
-    siteName: 'Karol Ziółkowski Portfolio',
-    locale: 'pl_PL',
-    type: 'website',
-  },
 };
 
 export default function RootLayout({
