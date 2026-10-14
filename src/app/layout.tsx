@@ -5,7 +5,7 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://karol-ziolkowski.vercel.app'), // <-- Wklej tu swój adres z Vercela
+  metadataBase: new URL('https://karol-ziolkowski.vercel.app/#portfolio'), // <-- Wklej tu swój adres z Vercela
   title: {
     default: 'Karol Ziółkowski | Web Developer & Next.js Freelancer',
     template: '%s | Karol Ziółkowski',
