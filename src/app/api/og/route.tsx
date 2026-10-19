@@ -1,10 +1,8 @@
 import { ImageResponse } from 'next/og';
-export const runtime = 'edge'; // <-- DODAJ TĘ LINIJKĘ
-export const alt = 'Karol Ziółkowski — Portfolio';
-export const size = { width: 1200, height: 630 };
-export const contentType = 'image/png';
 
-export default async function Image() {
+export const runtime = 'edge';
+
+export async function GET() {
   return new ImageResponse(
     (
       <div
@@ -27,6 +25,9 @@ export default async function Image() {
         </div>
       </div>
     ),
-    { ...size }
+    {
+      width: 1200,
+      height: 630,
+    }
   );
 }
